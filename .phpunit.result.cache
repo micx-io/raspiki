@@ -1,0 +1,1 @@
+C:30:"PHPUnit\Runner\TestResultCache":250:{a:2:{s:7:"defects";a:2:{s:37:"Test\HostConigTest::testIwListParsing";i:3;s:38:"Test\HostConigTest::testConnectNetwork";i:4;}s:5:"times";a:2:{s:37:"Test\HostConigTest::testIwListParsing";d:0.003;s:38:"Test\HostConigTest::testConnectNetwork";d:0.113;}}}
