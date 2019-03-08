@@ -1,44 +1,21 @@
 <?php
 
 namespace App;
-use Phore\MicroApp\App;
-use Phore\MicroApp\Handler\JsonExceptionHandler;
-use Phore\MicroApp\Handler\JsonResponseHandler;
-use Phore\MicroApp\Helper\CORSHelper;
-use Phore\MicroApp\Type\QueryParams;
-use Phore\MicroApp\Type\Request;
-use Phore\MicroApp\Type\RouteParams;
+use Micx\Raspiki\HostConfig;
+use Phore\StatusPage\PageHandler\NaviButtonWithIcon;
+use Phore\StatusPage\StatusPageApp;
 
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$app = new App();
-$app->activateExceptionErrorHandlers();
-$app->setOnExceptionHandler(new JsonExceptionHandler());
-$app->setResponseHandler(new JsonResponseHandler());
+$app = new StatusPageApp("raspiki");
 
-$app->assets()->addAssetSearchPath(__DIR__ . "/asset/");
+$app->addPage("/", function ()  {
 
-
-/**
- ** Configure Access Control Lists
- **/
-$app->acl->addRule(\aclRule()->route("/*")->ALLOW());
+}, new NaviButtonWithIcon("Status", "icon"));
 
 
-/**
- ** Configure Dependency Injection
- **/
-$app->add("someParameterName", function () {
-    return "Value";
-});
-
-/**
- ** Define Routes
- **/
-$app->router->get("/", function (RouteParams $routeParams, Request $request) {
-    return ["Hello World!"];
-});
+require __DIR__ . "/inc/_network.php";
 
 /**
  ** Run the application

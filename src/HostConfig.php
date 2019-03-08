@@ -42,6 +42,11 @@ class HostConfig
     }
 
 
+    public function getIpA () {
+        return json_decode(phore_exec("ip -j a"), true);
+    }
+
+
     public function connectNetwork ($device, $ssid, $psk, $dhcp=true) {
         file_put_contents("/host/tmp/wpa_supplicant.conf", "network={\nssid=\"$ssid\"\npsk=\"$psk\"\n}");
 

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phore/phore-core.git",
-                "reference": "18c7274db3717a3eaf6d431a7c9365f22c8d0bf5"
+                "reference": "7c4ae1c29b3f557ffc1e098f580a02c32d027a43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phore/phore-core/zipball/18c7274db3717a3eaf6d431a7c9365f22c8d0bf5",
-                "reference": "18c7274db3717a3eaf6d431a7c9365f22c8d0bf5",
+                "url": "https://api.github.com/repos/phore/phore-core/zipball/7c4ae1c29b3f557ffc1e098f580a02c32d027a43",
+                "reference": "7c4ae1c29b3f557ffc1e098f580a02c32d027a43",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 }
             ],
             "description": "Phore core library",
-            "time": "2019-02-13T10:04:47+00:00"
+            "time": "2019-03-06T21:34:40+00:00"
         },
         {
             "name": "phore/di-base",
@@ -1088,12 +1088,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "36aa2b0dcffd1f925eb9b5e46a73bb7f07fd2a14"
+                "reference": "7c21ed32f0272c177db380dbcd21b7ca978a1c37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/36aa2b0dcffd1f925eb9b5e46a73bb7f07fd2a14",
-                "reference": "36aa2b0dcffd1f925eb9b5e46a73bb7f07fd2a14",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7c21ed32f0272c177db380dbcd21b7ca978a1c37",
+                "reference": "7c21ed32f0272c177db380dbcd21b7ca978a1c37",
                 "shasum": ""
             },
             "require": {
@@ -1162,7 +1162,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-03-05T10:17:11+00:00"
+            "time": "2019-03-06T05:54:29+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
