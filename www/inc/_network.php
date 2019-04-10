@@ -4,11 +4,12 @@ use Micx\Raspiki\HostConfig;
 use Phore\StatusPage\PageHandler\NaviButtonWithIcon;
 
 $app->addPage("/network", function ()  {
+    $interface = phore_exec("iwconfig 2>&1 | grep IEEE", []);
     $hostConfig = new HostConfig();
     $e = fhtml("div @row");
 
     $ipTbl = phore_array_transform($hostConfig->getIpA(), function ($key, $val) {
-        $i =  ["local" => "", "operstate" => "DOWN"];
+        $i =  ["label" => "", "operstate" => "DOWN"];
         if (isset ($val["addr_info"][0]))
             $i = $val["addr_info"][0];
         return [$i["label"], $i["local"], $val["operstate"]];
