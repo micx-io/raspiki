@@ -7,7 +7,7 @@ WIFI_CHANNEL=$(iwlist channel 2> /dev/null | awk '/Current/ {print substr($5,1,l
 
 AP_IF=uae0
 
-cat > /etc/hostapd/hostapd.conf <<EOF
+cat >/etc/hostapd/hostapd.conf <<EOF
 
 interface=$AP_IF
 ssid=raspiki_7Z4F5
