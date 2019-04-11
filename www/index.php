@@ -16,7 +16,7 @@ $app->addPage("/", function ()  {
 
 
 require __DIR__ . "/inc/_network.php";
-
+require __DIR__ . "/inc/_view.php";
 /**
  ** Run the application
  **/

@@ -10,6 +10,6 @@ config_file:
 command:
   build:
     - "composer update"
-    - "sudo apt install -y wpasupplicant iw wireless-tools iproute2"
+    - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2"
     - 'echo "www-data   ALL = (ALL) NOPASSWD:   ALL" | sudo tee -a /etc/sudoers > /dev/null'
 
