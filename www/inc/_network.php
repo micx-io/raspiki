@@ -4,7 +4,7 @@ use Micx\Raspiki\HostConfig;
 use Phore\StatusPage\PageHandler\NaviButtonWithIcon;
 
 $app->addPage("/network", function ()  {
-    $interface = phore_exec("iwconfig 2>&1 | grep IEEE", []);
+    $interface = phore_exec("iwconfig 2>&1 | grep IEEE | awk '{print $1;}'", []);
     $hostConfig = new HostConfig();
     $e = fhtml("div @row");
 
@@ -33,7 +33,7 @@ $app->addPage("/network", function ()  {
     );
 
 
-    $nets = $hostConfig->getWirelessNetworks();
+    $nets = $hostConfig->getWirelessNetworks($interface);
     //print_r ($nets);
     $tbl = phore_array_transform($nets, function ($key, $value) {
         return  [$value["ESSID"], $value["Quality"], $value["Signal level"]];
