@@ -18,12 +18,12 @@ channel=$WIFI_CHANNEL
 macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
-wpa=2
+#wpa=2
 ctrl_interface=/var/run/hostapd
 ctrl_interface_group=0
-wpa_passphrase=yourAPpsk
-wpa_key_mgmt=WPA-PSK
-rsn_pairwise=CCMP
+#wpa_passphrase=yourAPpsk
+#wpa_key_mgmt=WPA-PSK
+#rsn_pairwise=CCMP
 
 EOF
 
@@ -52,11 +52,11 @@ ifdown $WIFI_IF
 
 ip link set dev $AP_IF up
 ip addr add 192.168.69.1/24 broadcast 192.168.69.255 dev $AP_IF
-sleep 1
+sleep 5
 
 hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 
-sleep 1
+sleep 5
 service hostapd restart
 
 ifup $WIFI_IF
