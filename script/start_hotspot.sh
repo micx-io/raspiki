@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e -x
 
 WIFI_IF=$(iwconfig 2>&1 | grep IEEE | awk '{print $1;}')
 WIFI_CHANNEL=$(iwlist channel 2> /dev/null | awk '/Current/ {print substr($5,1,length($5) - 1)}')
