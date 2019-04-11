@@ -1,6 +1,6 @@
 version: 1
-from: "infracamp/kickstart-flavor-arm32v7-php7:testing"
-
+#from: "infracamp/kickstart-flavor-arm32v7-php7:testing"
+from: "infracamp/kickstart-flavor-gaia:testing"
 apache_fallback_resource: "/index.php"
 
 config_file:
@@ -10,6 +10,11 @@ config_file:
 command:
   build:
     - "composer update"
-    - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2"
+    - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2 chromium-browser"
     - 'echo "www-data   ALL = (ALL) NOPASSWD:   ALL" | sudo tee -a /etc/sudoers > /dev/null'
 
+  run:
+    - "xhost +"
+
+  dev:
+    - "xhost +"
