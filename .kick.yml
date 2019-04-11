@@ -9,7 +9,7 @@ config_file:
 command:
   build:
     - "composer update"
-    - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2 chromium-browser"
+    - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2 netscript chromium-browser"
     - 'echo "www-data   ALL = (ALL) NOPASSWD:   ALL" | sudo tee -a /etc/sudoers > /dev/null'
 
   run:
