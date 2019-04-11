@@ -1,21 +1,20 @@
 <?php
 
+namespace App;
+
+use Micx\Raspiki\BrowserStarter;
 use Micx\Raspiki\HostConfig;
 use Phore\StatusPage\PageHandler\NaviButtonWithIcon;
 
 $app->addPage("/view", function ()  {
     $e = fhtml("div @row");
 
-    putenv("DISPLAY=" . DISPLAY);
-    phore_exec("chromium-browser");
+    $browser = new BrowserStarter();
+    $browser->open("http://google.de");
+
     $e[]= pt()->card(
         "Connections",
-        pt()->basic_table(
-            ["Interface", "IP", "Status"],
-            [
-
-            ]
-        )
+       "muh"
     );
     return $e;
 

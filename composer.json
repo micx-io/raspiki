@@ -11,7 +11,8 @@
   "require": {
     "php": ">=7.2",
     "phore/status-page": "dev-master",
-    "phore/system": "dev-master"
+    "phore/system": "dev-master",
+    "phore/filesystem": "dev-master"
   },
   "autoload": {
     "psr-4": {

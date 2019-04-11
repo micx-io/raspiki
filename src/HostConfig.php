@@ -7,6 +7,14 @@ namespace Micx\Raspiki;
 class HostConfig
 {
 
+    public function getWirelessInterface() : ?string
+    {
+        $ret = phore_exec("iwconfig 2>&1 | grep IEEE | awk '{print $1;}'", []);
+        if (trim ($ret) === "")
+            return null;
+        return $ret;
+    }
+
     public function getWirelessNetworks(string $device="wlp2s0", string $iwoutput=null)
     {
         if ($iwoutput === null)
@@ -43,7 +51,53 @@ class HostConfig
 
 
     public function getIpA () {
-        return json_decode(phore_exec("ip -j a"), true);
+        $data = json_decode(phore_exec("ip -j a"), true);
+
+        $data = phore_array_transform($data, function($key, $data) {
+            try {
+                $r = [
+                    "ifname" => phore_pluck("ifname", $data),
+                    "operstate" => phore_pluck("operstate", $data),
+                    "link_type" => phore_pluck("link_type", $data),
+                    "address" => phore_pluck("address", $data),
+                    "inet_addr_primary" => null,
+                    "inet6_addr_primary" => null,
+                    "inet_addr" => [],
+                    "inet6_addr" => []
+                ];
+
+                foreach (phore_pluck("addr_info", $data, []) as $addrData) {
+                    try {
+                        $retData = [
+                            "family" => phore_pluck("family", $addrData),
+                            "local" => phore_pluck("local", $addrData),
+                            "prefixlen" => phore_pluck("prefixlen", $addrData),
+                            "label" => phore_pluck("label", $addrData, null),
+                            "broadcast" => phore_pluck("label", $addrData, null)
+                        ];
+                        if ($retData["family"] === "inet") {
+                            if ($r["inet_addr_primary"] === null)
+                                $r["inet_addr_primary"] = $retData;
+                            $r["inet_addr"][] = $retData;
+                        } else if ($retData["family"] === "inet6") {
+                            if ($r["inet6_addr_primary"] === null)
+                                $r["inet6_addr_primary"] = $retData;
+                            $r["inet6_addr"][] = $retData;
+                        }
+                    } catch (\Exception $e) {
+                        throw $e;
+                        continue;
+                    }
+                }
+                return $r;
+
+            } catch (\Exception $e) {
+                throw $e;
+                return null;
+            }
+
+        });
+        return $data;
     }
 
 
