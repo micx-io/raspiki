@@ -6,6 +6,7 @@ use Phore\StatusPage\PageHandler\NaviButtonWithIcon;
 $app->addPage("/view", function ()  {
     $e = fhtml("div @row");
 
+    putenv("DISPLAY=" . DISPLAY);
     phore_exec("chromium-browser");
     $e[]= pt()->card(
         "Connections",
