@@ -35,8 +35,8 @@ interface=$AP_IF
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=192.168.69.50,192.168.69.150,12h
-
+dhcp-range=192.168.0.50,192.168.0.150,12h
+dhcp-option=3,192.168.0.1
 EOF
 
 cat > /etc/dhcpcd.conf <<EOF
@@ -57,7 +57,7 @@ sleep 5
 hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 
 sleep 5
-service hostapd restart
+#service hostapd restart
 
 #ifup $WIFI_IF
-service dnsmasq restart
+#service dnsmasq restart
