@@ -9,7 +9,7 @@ $app->addPage("/network", function ()  {
     $e = fhtml("div @row");
 
     $ipTbl = phore_array_transform($hostConfig->getIpA(), function ($key, $val) {
-        $i =  ["label" => "", "operstate" => "DOWN"];
+        $i =  ["local" => "", "label"=>"undefinded", "operstate" => "DOWN"];
         if (isset ($val["addr_info"][0]))
             $i = $val["addr_info"][0];
         return [$i["label"], $i["local"], $val["operstate"]];
