@@ -48,7 +48,7 @@ EOF
 
 
 iw dev $WIFI_IF interface add $AP_IF type __ap
-ifdown $WIFI_IF
+#ifdown $WIFI_IF
 
 ip link set dev $AP_IF up
 ip addr add 192.168.69.1/24 broadcast 192.168.69.255 dev $AP_IF
@@ -59,5 +59,5 @@ hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 sleep 5
 service hostapd restart
 
-ifup $WIFI_IF
+#ifup $WIFI_IF
 service dnsmasq restart
