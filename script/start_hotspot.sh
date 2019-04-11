@@ -30,9 +30,8 @@ EOF
 
 cat > /etc/dnsmasq.conf <<EOF
 
-interface=lo,$AP_IF
-no-dhcp-interface=lo,wlan0
-bind-interfaces
+interface=$AP_IF
+#no-dhcp-interface=lo,wlan0
 server=8.8.8.8
 domain-needed
 bogus-priv
@@ -50,8 +49,9 @@ EOF
 iw dev $WIFI_IF interface add $AP_IF type __ap
 #ifdown $WIFI_IF
 
+
+ip addr add 192.168.0.1/24 broadcast 192.168.0.255 dev $AP_IF
 ip link set dev $AP_IF up
-ip addr add 192.168.69.1/24 broadcast 192.168.69.255 dev $AP_IF
 sleep 5
 
 hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
