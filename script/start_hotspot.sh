@@ -63,4 +63,4 @@ sleep 5
 #service hostapd restart
 
 #ifup $WIFI_IF
-#service dnsmasq restart
+dnsmasq -dd &
