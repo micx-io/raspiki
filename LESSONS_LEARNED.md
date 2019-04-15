@@ -23,3 +23,8 @@ to initiate hostap due to hardware country restrictions
 sudo ip link set uae0 down
 sudo ip link set uae0 up
 hostapd -dd -P
+
+
+## Start network
+
+wpa_supplicant  -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf -dd
