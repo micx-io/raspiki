@@ -31,21 +31,21 @@ wmm_enabled=1
 
 ## Config
 hw_mode=a
-wmm_enabled=1
+#wmm_enabled=1
 
 # N
 ieee80211n=1
-require_ht=1
-ht_capab=[MAX-AMSDU-3839][HT40+][SHORT-GI-20][SHORT-GI-40][DSSS_CCK-40]
+#require_ht=1
+#ht_capab=[MAX-AMSDU-3839][HT40+][SHORT-GI-20][SHORT-GI-40][DSSS_CCK-40]
 
 # AC
-ieee80211ac=1
-require_vht=1
+#ieee80211ac=1
+#require_vht=1
 ieee80211d=1
 ieee80211h=1
-vht_capab=[MAX-AMSDU-3839][SHORT-GI-80]
-vht_oper_chwidth=1
-vht_oper_centr_freq_seg0_idx=42
+#vht_capab=[MAX-AMSDU-3839][SHORT-GI-80]
+#vht_oper_chwidth=1
+#vht_oper_centr_freq_seg0_idx=42
 
 EOF
 
@@ -80,7 +80,7 @@ ip link set dev $WIFI_IF up
 ip link set dev $AP_IF up
 sleep 5
 
-hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
+hostapd -dd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 
 sleep 5
 #service hostapd restart
