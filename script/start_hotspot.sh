@@ -19,12 +19,12 @@ channel=6
 macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
-#wpa=2
+wpa=2
 ctrl_interface=/var/run/hostapd
 ctrl_interface_group=0
-#wpa_passphrase=yourAPpsk
-#wpa_key_mgmt=WPA-PSK
-#rsn_pairwise=CCMP
+wpa_passphrase=keykeykey
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
 
 EOF
 
@@ -46,7 +46,7 @@ interface $AP_IF
 
 EOF
 
-#ip link set dev $WIFI_IF down
+ip link set dev $WIFI_IF down
 iw dev $WIFI_IF interface add $AP_IF type __ap
 #
 
