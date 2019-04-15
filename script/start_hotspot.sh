@@ -45,13 +45,13 @@ interface $AP_IF
 
 EOF
 
-ifdown $WIFI_IF
+ip link set dev $WIFI_IF down
 iw dev $WIFI_IF interface add $AP_IF type __ap
 #
 
 
 ip addr add 192.168.0.1/24 broadcast 192.168.0.255 dev $AP_IF
-ifup $WIFI_IF
+ip link set dev $WIFI_IF up
 ip link set dev $AP_IF up
 sleep 5
 
