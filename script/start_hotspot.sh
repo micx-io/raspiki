@@ -13,7 +13,7 @@ interface=$AP_IF
 ssid=raspiki_7Z4F5
 driver=nl80211
 hw_mode=g
-ieee80211n=0
+ieee80211n=1
 channel=$WIFI_CHANNEL
 #channel=6
 macaddr_acl=0
@@ -62,5 +62,7 @@ hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 sleep 5
 #service hostapd restart
 
+service hostpad stop
+service dnsmasq stop
 #ifup $WIFI_IF
 dnsmasq -dd &
