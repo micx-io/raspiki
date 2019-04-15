@@ -12,9 +12,9 @@ cat >/etc/hostapd/hostapd.conf <<EOF
 interface=$AP_IF
 ssid=raspiki_7Z4F5
 driver=nl80211
-#hw_mode=g
-#ieee80211n=1
-#channel=$WIFI_CHANNEL
+hw_mode=g
+ieee80211n=1
+channel=$WIFI_CHANNEL
 macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
@@ -45,12 +45,13 @@ interface $AP_IF
 
 EOF
 
-
+ifdown $WIFI_IF
 iw dev $WIFI_IF interface add $AP_IF type __ap
-#ifdown $WIFI_IF
+#
 
 
 ip addr add 192.168.0.1/24 broadcast 192.168.0.255 dev $AP_IF
+ifup $WIFI_IF
 ip link set dev $AP_IF up
 sleep 5
 
