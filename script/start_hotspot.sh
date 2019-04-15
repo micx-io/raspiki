@@ -14,6 +14,7 @@ ssid=raspiki_7Z4F5
 driver=nl80211
 #hw_mode=g
 #ieee80211n=1
+mode=2
 channel=$WIFI_CHANNEL
 #channel=6
 macaddr_acl=0
@@ -53,7 +54,7 @@ iw dev $WIFI_IF interface add $AP_IF type __ap
 
 
 ip addr add 192.168.0.1/24 broadcast 192.168.0.255 dev $AP_IF
-#ip link set dev $WIFI_IF up
+ip link set dev $WIFI_IF up
 ip link set dev $AP_IF up
 sleep 5
 
