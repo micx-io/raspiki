@@ -17,6 +17,7 @@ sudo iw list
 shows `no IR` behind channel: This channel cannot be used
 to initiate hostap due to hardware country restrictions
 
+https://github.com/raspberrypi/linux/issues/2619#issuecomment-410703338
 
 ## Resetting interfaces
 
