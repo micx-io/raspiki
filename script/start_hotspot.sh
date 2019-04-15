@@ -29,7 +29,7 @@ wmm_enabled=1
 #ht_capab=[HT40-][SHORT-GI-20][SHORT-GI-40]
 
 
-## Config 
+## Config
 hw_mode=a
 wmm_enabled=1
 
@@ -41,8 +41,8 @@ ht_capab=[MAX-AMSDU-3839][HT40+][SHORT-GI-20][SHORT-GI-40][DSSS_CCK-40]
 # AC
 ieee80211ac=1
 require_vht=1
-ieee80211d=0
-ieee80211h=0
+ieee80211d=1
+ieee80211h=1
 vht_capab=[MAX-AMSDU-3839][SHORT-GI-80]
 vht_oper_chwidth=1
 vht_oper_centr_freq_seg0_idx=42
