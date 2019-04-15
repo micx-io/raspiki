@@ -23,7 +23,7 @@ ignore_broadcast_ssid=0
 wpa=0
 #ctrl_interface=/var/run/hostapd
 #ctrl_interface_group=0
-country_code=EU
+country_code=DE
 #wpa_passphrase=
 #wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
@@ -50,7 +50,8 @@ interface $AP_IF
 
 EOF
 
-iw reg set EU
+# Allow creating AP >channel 100
+#iw reg set DE
 
 ip link set dev $WIFI_IF down
 iw dev $WIFI_IF interface add $AP_IF type __ap

@@ -16,3 +16,10 @@ sudo iw list
 
 shows `no IR` behind channel: This channel cannot be used
 to initiate hostap due to hardware country restrictions
+
+
+## Resetting interfaces
+
+sudo ip link set uae0 down
+sudo ip link set uae0 up
+hostapd -dd -P
