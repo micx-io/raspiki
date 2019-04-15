@@ -12,7 +12,7 @@ cat >/etc/hostapd/hostapd.conf <<EOF
 interface=$AP_IF
 ssid=raspiki_7Z4F5
 driver=nl80211
-hw_mode=g
+hw_mode=a
 ieee80211n=1
 ieee80211d=1
 channel=$WIFI_CHANNEL
