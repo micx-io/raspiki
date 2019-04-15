@@ -19,11 +19,12 @@ channel=6
 macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
-wpa=2
+wpa=0
 ctrl_interface=/var/run/hostapd
 ctrl_interface_group=0
-wpa_passphrase=keykeykey
-wpa_key_mgmt=WPA-PSK
+country_code=DE
+#wpa_passphrase=
+#wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
 
 EOF
