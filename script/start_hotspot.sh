@@ -63,7 +63,7 @@ hostapd -B -P /run/hostapd.pid /etc/hostapd/hostapd.conf &
 sleep 5
 #service hostapd restart
 
-service hostpad stop
+#service hostpad stop
 service dnsmasq stop
 #ifup $WIFI_IF
 dnsmasq -dd &
