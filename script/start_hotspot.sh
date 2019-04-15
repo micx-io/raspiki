@@ -12,7 +12,7 @@ cat >/etc/hostapd/hostapd.conf <<EOF
 interface=$AP_IF
 ssid=raspiki_7Z4F5
 driver=nl80211
-hw_mode=any
+hw_mode=a
 ieee80211n=1
 ieee80211d=1
 channel=$WIFI_CHANNEL
@@ -27,6 +27,8 @@ country_code=EU
 #wpa_passphrase=
 #wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
+wmm_enabled=1
+ht_capab=[HT40-][SHORT-GI-20][SHORT-GI-40]
 
 EOF
 
