@@ -12,6 +12,7 @@ command:
     - "sudo apt-get install -y wpasupplicant iw wireless-tools iproute2 hostapd dnsmasq netscript "
     - 'echo "www-data   ALL = (ALL) NOPASSWD:   ALL" | sudo tee -a /etc/sudoers > /dev/null'
     - /opt/script/install-lcd-drivers.sh
+    - /opt/script/install_pan_hotspot.sh
 
   run:
     #- "xhost +"
