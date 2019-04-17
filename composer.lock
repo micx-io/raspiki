@@ -1192,12 +1192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "893a342763f454e029579b6a5175cd8c4a408168"
+                "reference": "7602ff48472ed4f4a0d37348e37e39ade3fee5cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/893a342763f454e029579b6a5175cd8c4a408168",
-                "reference": "893a342763f454e029579b6a5175cd8c4a408168",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7602ff48472ed4f4a0d37348e37e39ade3fee5cf",
+                "reference": "7602ff48472ed4f4a0d37348e37e39ade3fee5cf",
                 "shasum": ""
             },
             "require": {
@@ -1266,7 +1266,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-04-08T16:09:04+00:00"
+            "time": "2019-04-15T07:12:41+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1882,7 +1882,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",

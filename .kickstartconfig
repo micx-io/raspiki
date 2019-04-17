@@ -1,5 +1,11 @@
 
 ## Install /usr/bin/qemu-user-static/ on host system (sudo apt-get install qemu-user)
-#docker run --rm --privileged multiarch/qemu-user-static:register --reset --credential yes
+
+if [ $(uname -a | grep armv7l)="" ]
+then
+    # Run qemu on other than armv7l platforms
+    docker run --rm --privileged multiarch/qemu-user-static:register --reset --credential yes
+fi;
+
 
 KICKSTART_DOCKER_RUN_OPTS="-v /:/host --privileged -v /tmp/.X11-unix:/temp.X11-unix -e DISPLAY=unix$DISPLAY --net=host"
