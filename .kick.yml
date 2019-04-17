@@ -14,7 +14,7 @@ command:
     - /opt/script/install-lcd-drivers.sh
 
   run:
-    - "xhost +"
+    #- "xhost +"
 
   dev:
-    - "xhost +"
+    #- "xhost +"
