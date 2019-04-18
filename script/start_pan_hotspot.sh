@@ -35,5 +35,5 @@ ip link add pan0 type veth
 ip addr add 192.168.0.1/24 broadcast 192.168.0.255 dev pan0
 dnsmasq -dd &
 
-bt-network -s nap pan0 &
+bt-network -s server pan0 &
 bt-adapter --set Discoverable 1
